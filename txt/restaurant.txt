@@ -1,0 +1,5 @@
+id;restaurantName;city;rating;picturePath
+1;Liliom Utcai Látványpékség;Szeged;4.5;kepek/pekseg.jpg
+2;Pizzaparadicsom;Szeged;4.7;kepek/pizza.jpg
+3;Lángos művek;Szeged;4.3;kepek/langos.jpg
+4;Napfény Gyorsétterem;Szeged;3.7;kepek/gyros.jpg

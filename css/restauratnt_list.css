@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 200px;
+    padding-top: 50px;
+    padding-left: 50px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+    background-image: url('../kepek/leghajo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px;
+
+}
+
+.title {
+    color:#1abc9c ;
+    font-size: 80px;
+}
+
+.title > span {
+    color: tomato;
+}
+
+.slogan {
+    font-size: 35px;
+}
+
+header > a {
+    color:white;
+    font-size: 20px;
+}
+
+header > a:hover {
+    color:tomato;
+}
+
+.content {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #1abc9c;
+    font-family: 'Roboto';
+}
+
+.element {
+    width: 1200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: tomato;
+    box-shadow:  5px 5px 10px #303030;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+}
+
+.second {
+    flex-grow: 1;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-family: 'Roboto';
+}
+
+.element > img {
+    
+    height: 200px;
+    margin-right: 20px;
+    float: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.first > .name {
+
+    padding-top: 20px;
+    font-family: 'Bebas Neue';
+    font-size: 35px;
+    color: #303030;
+}
+
+.first  > .info {
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: white;
+}
+
+.buttons > div {
+    height: 33.3333px;
+    padding-top: 16.6666px;
+    text-align: center;
+    width: 150px;
+}
+
+.buttons > .smiley {
+    background-color: #303030;
+    border-top-right-radius: 10px;
+}
+
+.buttons > .menu {
+    background-color: #101010;
+}
+
+.buttons > .contact {
+    background-color: #303030;
+}
+
+.buttons > .saveToFavList {
+    background-color: #101010;
+    border-bottom-right-radius: 10px;
+}
+
+.buttons > div > a {
+    color: tomato;
+    font-family: 'Bebas Neue';
+}
+
+.element > img:not(.except) {
+    filter: grayscale(100%);
+}

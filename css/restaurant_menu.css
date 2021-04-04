@@ -1,0 +1,77 @@
+body {
+    font-size: 15px;
+    font-family: 'Roboto';
+    background-image: url('../kepek/menuhatter.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 115%;
+}
+
+.tag1, .tag2 {
+    line-height: 150%;
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 40px;
+    font-family: "Bebas Neue";
+    text-align: center;
+    padding-right: 70px;
+    color: #303030;
+
+}
+
+td:first-of-type {
+    box-shadow: 3px 3px 5px 6px #ccc;
+    color: tomato;
+
+}
+
+.name {
+    font-weight: bold;
+    font-size: 23px;
+    color: #1abc9c;
+    padding-left: 40px;
+
+}
+
+th {
+    font-size: 40px;
+    color: #1abc9c;
+    font-family: "Bebas Neue";
+
+}
+
+tr td {
+    width: 100%;
+}
+
+a {
+    color: #1abc9c;
+}
+
+.header {
+
+
+    font-size: 50px;
+    font-family: "Bebas Neue";
+}
+
+a > span {
+    color: tomato;
+}
+
+.price {
+    font-weight: bold;
+    padding-top: 5px;
+
+}
+
+.leiras {
+    font-style: italic;
+}
+
+mark {
+    background-color: tomato;
+    color: white;
+}

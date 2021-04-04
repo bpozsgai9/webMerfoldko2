@@ -1,0 +1,4 @@
+id;firstName;lastName;email;telephone;birthDate
+1;Gábor;Kovács;kovacs.gabor@gmail.com;06301111111;1995-03-11
+2;András;Horváth;andras.horvath@citromail.hu;06701111111;1981-05-26
+3;Peter;Parker;iamnotspiderman@marvel.com;+36121111111;1970-10-08

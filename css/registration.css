@@ -1,0 +1,96 @@
+body {
+    margin: auto;
+    font-family: 'Bebas Neue';
+    text-shadow: 1px 1px white;
+    background-color: white;
+    white-space: normal;
+}
+
+
+.register {
+    text-align: center;
+    color: #1abc9c;
+    font-size: 35px;
+    text-shadow: 2px 2px black;
+}
+
+
+div, label {
+    letter-spacing: 2px;
+    line-height: 200%;
+
+
+}
+
+fieldset {
+    width: 600px;
+    margin: auto;
+    font-family: 'Roboto';
+    color: #1abc9c;
+    text-shadow: 1px 1px black;
+    box-shadow: 3px 3px 15px 10px #ccc;
+
+}
+
+input {
+    width: 35%;
+    line-height: 30px;
+    color: tomato;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid #1abc9c;
+
+}
+
+
+.header {
+    position: fixed;
+    width: 27%;
+    height: 80px;
+    font-size: 20px;
+    color: #1abc9c;
+    background-color: white;
+}
+
+
+#also {
+    padding-left: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: #1abc9c;
+}
+
+.nev > span {
+    padding-left: 40px;
+}
+
+.belso {
+    padding-left: 50px;
+    font-size: 30px;
+}
+
+ul {
+    list-style: none;
+    letter-spacing: 5px;
+}
+
+li {
+    display: inline;
+}
+
+#index:hover, #login:hover {
+    color: #303030;
+    text-decoration: underline;
+}
+
+u:hover {
+    color: #303030;
+    text-decoration: underline;
+}
+
+
+
+
+
