@@ -51,6 +51,6 @@ class CoolFood {
     }
 }
 
-//példány
+//példány - class-on kívül
 $coolFood = new CoolFood();
 ?>
