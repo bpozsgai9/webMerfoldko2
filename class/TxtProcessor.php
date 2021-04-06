@@ -1,7 +1,7 @@
 <?php
-require 'User.php';
-require 'Restaurant.php';
-require 'Menu.php';
+require 'dataObject/User.php';
+require 'dataObject/Restaurant.php';
+require 'dataObject/Menu.php';
 
 class TxtProcessor {
 
