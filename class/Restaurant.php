@@ -7,16 +7,33 @@ class Restaurant {
     private $rating;
     private $picturePath;
 
-    /*public function __construct($id, $restaurantName, $city, $rating, $picturePath) {
+    public function __construct() {
+        
+        $argv = func_get_args();
+        
+        switch (func_num_args()) {
+            
+            case 5:
+                self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4]);
+            break;
+            
+            case 1:
+                self::__construct2($argv[0]);
+            break;
+            
+        }
+    }
+
+    public function __construct1($id, $restaurantName, $city, $rating, $picturePath) {
 
         $this->id = $id;
         $this->restaurantName = $restaurantName;
         $this->city = $city;
         $this->rating = $rating;
         $this->picturePath = $rating;
-    }*/
+    }
 
-    public function __construct($line) {
+    public function __construct2($line) {
 
         $arrivingData = explode(";", $line);
 
@@ -27,9 +44,7 @@ class Restaurant {
         $this->picturePath = $arrivingData[4];
     }
 
-    
-
-    private function __destruct() {
+    public function __destruct() {
 
         //kapcsolat bont
     }
@@ -42,8 +57,6 @@ class Restaurant {
 
     public function getRating() { return $this->rating; }
 
-    public function getPicturePath() { return $this->picturePath; }
-
-    
+    public function getPicturePath() { return $this->picturePath; }   
 }
 ?>

@@ -20,21 +20,24 @@ class TxtProcessor {
         try {
             
             $file = fopen($fileName, "r");
-            $firstLine = fgets($file);
+            $firstLineOfFile = fgets($file);
+            $nextLineOfFile;
+
             while(! feof($file)) {
                 
+                $nextLineOfFile = fgets($file);
                 switch ($objectType) {
             
                     case "user": 
-                        array_push($this->objectArray, new User(fgets($file)));    
+                        array_push($this->objectArray, new User($nextLineOfFile));    
                         break;
 
                     case "restaurant": 
-                        array_push($this->objectArray, new Restaurant(fgets($file)));
+                        array_push($this->objectArray, new Restaurant($nextLineOfFile));
                         break;
 
                     case "menu": 
-                        array_push($this->objectArray, new Menu(fgets($file)));
+                        array_push($this->objectArray, new Menu($nextLineOfFile));
                         break;
                 }
                 

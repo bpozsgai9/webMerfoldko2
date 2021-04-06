@@ -8,7 +8,24 @@ class Menu {
     private $price;
     private $picturePath;
 
-    /*public function __construct($id, $restaurantId, $name, $description, $price, $picturePath) {
+    public function __construct() {
+        
+        $argv = func_get_args();
+        
+        switch (func_num_args()) {
+            
+            case 6:
+                self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5]);
+            break;
+            
+            case 1:
+                self::__construct2($argv[0]);
+            break;
+            
+        }
+    }
+
+    public function __construct1($id, $restaurantId, $name, $description, $price, $picturePath) {
 
         $this->id = $id;
         $this->restaurantId = $restaurantId;
@@ -16,9 +33,9 @@ class Menu {
         $this->description = $description;
         $this->price = $price;
         $this->picturePath = $picturePath;
-    }*/
+    }
 
-    public function __construct($line) {
+    public function __construct2($line) {
 
         $arrivingData = explode(";", $line);
 
@@ -46,6 +63,5 @@ class Menu {
     function getPrice() { $this->price; }
     
     function getPicturePath() { $this->picturePath; }
-    
 }
 ?>

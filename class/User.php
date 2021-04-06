@@ -8,7 +8,24 @@ class User {
     private $telephone;
     private $birthDate;
 
-    /*public function __construct($id, $firstName, $lastName, $email, $telephone, $birthDate) {
+    public function __construct() {
+        
+        $argv = func_get_args();
+        
+        switch (func_num_args()) {
+            
+            case 6:
+                self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5]);
+            break;
+            
+            case 1:
+                self::__construct2($argv[0]);
+            break;
+            
+        }
+    }
+
+    public function __construct1($id, $firstName, $lastName, $email, $telephone, $birthDate) {
 
         $this->id = $id;
         $this->firstName = $firstName;
@@ -16,9 +33,9 @@ class User {
         $this->email = $email;
         $this->telephone = $telephone;
         $this->birthDate = $birthDate;
-    }*/
+    }
 
-    public function __construct($line) {
+    public function __construct2($line) {
 
         $arrivingData = explode(";", $line);
 
@@ -46,6 +63,5 @@ class User {
     public function getTelephone() { return $this->telephone; }
 
     public function getBirthDate() { return $this->birthDate; }
-
 }
 ?>
