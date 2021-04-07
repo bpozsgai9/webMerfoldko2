@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html"> Vissza</a>
+        <a href="index.php"> Vissza</a>
         <div class="title">
             <strong>
                 Szeged
@@ -52,7 +52,7 @@
                         </div>
                         <div class="menu">
                             <a 
-                                href="restaurant_menu.html"
+                                href="restaurant_menu.php"
                                 style="color: #1abc9c;">
                                 Menü - Kattints ide!
                             </a>

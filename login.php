@@ -49,12 +49,12 @@
                 </label>
             </div>
             <div class="register">
-                <a href="registration.html">
+                <a href="registration.php">
                     Kattints ide ha még nincsen fiókod.
                 </a>
             </div>
             <div class="index">
-                <a href="index.html">
+                <a href="index.php">
                     Vissza a főoldalra.
                 </a>
             </div>

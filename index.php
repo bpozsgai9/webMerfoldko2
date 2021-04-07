@@ -15,10 +15,10 @@
                 <a href="https://www.nak.hu/sajto/sajtokozlemenyek/102649-minden-nap-egy-alma-az-orvost-tavol-tartja">🍏</a>
             </div>
             <div class="afterMe2">
-                <a href="login.html">Bejelentkezés</a>
+                <a href="login.php">Bejelentkezés</a>
             </div>
             <div class="afterMe">
-                <a href="registration.html">Regisztráció</a>
+                <a href="registration.php">Regisztráció</a>
             </div>
         </nav>
     </aside>
@@ -81,7 +81,7 @@
                 <table>
                     <tr>
                         <td>
-                            <a class="except" href="restauratnt_list.html">
+                            <a class="except" href="restauratnt_list.php">
                                 <div class="polaroid">
                                     <img src="kepek/szeged.jpg" alt="Szeged">
                                     <div class="container">

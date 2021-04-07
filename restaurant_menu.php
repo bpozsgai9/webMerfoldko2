@@ -10,13 +10,13 @@
 </head>
 <body>
 <header>
-    <div class="header"><a style="text-decoration: none" href="index.html">
+    <div class="header"><a style="text-decoration: none" href="index.php">
         Cool <span>Food</span>
     </a>
         <div class="image"></div>
     </div>
 </header>
-<a href="restauratnt_list.html">Vissza</a>
+<a href="restauratnt_list.php">Vissza</a>
 <div class="title">
     Liliom utcai látványpékség<br/>
     🥐🥨🍞

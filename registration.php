@@ -12,8 +12,8 @@
 <header>
     <div class="header">
         <ul>
-            <li><a id="index" href="index.html"><b>Főoldal</b></a></li>
-            <li><a id="login" href="login.html"><b>Bejelentkezés</b></a></li>
+            <li><a id="index" href="index.php"><b>Főoldal</b></a></li>
+            <li><a id="login" href="login.php"><b>Bejelentkezés</b></a></li>
         </ul>
     </div>
 
