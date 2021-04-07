@@ -5,8 +5,7 @@ class CoolFood {
 
     public function __construct() {
         
-        self::listUserArray();
-        self::listRestaurantArray();
+        //self::listUserArray();
     }
 
     public function __destruct() {
@@ -16,7 +15,7 @@ class CoolFood {
 
     public function listUserArray() {
 
-        $userTxtProcessor = new TxtProcessor("../txt/user.txt", "user");
+        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
         $objectArray = $userTxtProcessor->getObjectArray();
         
         foreach ($objectArray as $object) {
@@ -35,22 +34,42 @@ class CoolFood {
 
     public function listRestaurantArray() {
         
-        $restaurantTxtProcessor = new TxtProcessor("../txt/restaurant.txt", "restaurant");
+        $restaurantTxtProcessor = new TxtProcessor("txt/restaurant.txt", "restaurant");
         $objectArray = $restaurantTxtProcessor->getObjectArray();
 
         foreach ($objectArray as $object) {
 
-            echo "<h3>";
-                echo "A(z) " .  $object->getId() . ". étterem adatai:<br>";
-            echo "</h3>";
-            echo "A(z) étterem neve: " . $object->getRestaurantName() . "<br>";
-            echo "Város: " . $object->getCity() . "<br>";
-            echo "Értékelés: " . $object->getRating() . "<br>";
-            echo "<img src='../" . $object->getPicturePath() . "' alt='varosKep' width='200'><br>";
+            echo "<div class='element'>";
+            echo "<img src='" . $object->getPicturePath() . "' alt='étel kép'>";
+            echo "<div class='container'>";
+            echo "<div class='first'>";
+            echo "<div class='name'>" . $object->getRestaurantName() . "  (" . $object->getCity() . ")</div>";
+            echo "<div class='info'>";
+            echo  $object->getRating() . " / 5 ⭐⭐⭐⭐<br /><br />";
+            echo "✔️ SZÉP kártyás fizetés<br />";
+            echo "✔️ Érintkezésmentes kiszállítás<br />";
+            echo "✔️ 6 vélemény<br />";
+            echo "</div>";
+            echo "</div>";
+            echo "<div class='second'></div>";
+            echo "<div class='buttons'>";
+            echo "<div class='smiley'>" . $object->getId() . "</div>";
+            echo "<div class='menu'>";
+            echo "<a href='restaurant_menu.php' style='color: #1abc9c;'>Menü Kattints ide!</a>";
+            echo "</div>";
+            echo "<div class='contact'>";
+            echo "<a href=''>Kontakt</a>";
+            echo "</div>";
+            echo "<div class='saveToFavList'>";
+            echo "<a href=''>Mentés</a>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
         }
     }
 }
 
 //példány - class-on kívül
-$coolFood = new CoolFood();
+
 ?>

@@ -29,7 +29,7 @@ class TxtProcessor {
                 switch ($objectType) {
             
                     case "user": 
-                        array_push($this->objectArray, new User($nextLineOfFile));    
+                        array_push($this->objectArray, new User($nextLineOfFile));
                         break;
 
                     case "restaurant": 

@@ -122,6 +122,6 @@ h1 {
     font-family: 'Bebas Neue';
 }
 
-.element > img:not(.except) {
+/*.element > img:not(.except) {
     filter: grayscale(100%);
-}
+}*/
