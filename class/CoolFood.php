@@ -67,8 +67,58 @@ class CoolFood {
             echo "</div>";
         }
     }
+
+    public function listMenuArray() {
+        
+        $menuTxtProcessor = new TxtProcessor("txt/menu.txt", "menu");
+        $objectArray = $menuTxtProcessor->getObjectArray();
+
+        //print_r($objectArray);
+        
+        echo "<table class='lepeny'>";
+        echo "<tr>";
+            echo "<th>Lepények</th>";
+            echo "<th></th>";
+        echo "</tr>";
+
+        
+        foreach ($objectArray as $object) {
+            
+            if (str_contains($object->getName(), 'lepény')) {
+                echo "bug";
+                echo "<tr>";
+                echo "<td>";
+                echo "<div class='name'>" . $object->getId() . ". " . $object->getName() . "</div>";
+                echo "<div class='leiras'>" . $object->getDescription() . "</div>";
+                echo "<div class='price'><mark>" . $object->getPrice() . " Ft</mark></div>";
+                echo "</td>";
+                echo "<td><img src='" . $object->getPicturePath() ."' alt='lepény'></td>";
+                echo "</tr>";
+            }
+        }
+        echo "</table>";
+        echo "<br>";
+
+        //második
+        echo "<table class='peksuti'>";
+        echo "<tr>";
+            echo "<th><b>Péksütemények</b></th>";
+            echo "<th></th>";
+        echo "</tr>";
+        foreach ($objectArray as $object) {
+            
+            if (!str_contains($object->getName(), 'lepény')) {
+                
+                echo "<tr>";
+                echo "<td>";
+                echo "<div class='name'>" . $object->getId() . ". " . $object->getName() . "</div>";
+                echo "<div class='leiras'>" . $object->getDescription() . "</div>";
+                echo "<div class='price'><mark>" . $object->getPrice() . " Ft</mark></div>";
+                echo "</td>";
+                echo "<td><img src='" . $object->getPicturePath() ."' alt='péksüti'></td>";
+                echo "</tr>";
+            }
+        }
+        echo "</table>"; 
+    }
 }
-
-//példány - class-on kívül
-
-?>

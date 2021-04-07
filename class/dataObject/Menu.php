@@ -44,7 +44,7 @@ class Menu {
         $this->name = $arrivingData[2];
         $this->description = $arrivingData[3];
         $this->price = (int)$arrivingData[4];
-        $this->picturePath = $arrivingData[4];
+        $this->picturePath = $arrivingData[5];
     }
 
     public function __destruct() {
@@ -52,16 +52,16 @@ class Menu {
         //kapcsolat bont
     }
 
-    function getId() { $this->id; }
+    public function getId() { return $this->id; }
     
-    function getRestaurantId() { $this->restaurantId; }
+    public function getRestaurantId() { return $this->restaurantId; }
     
-    function getName() { $this->name; }
+    public function getName() { return $this->name; }
     
-    function getDescription() { $this->description; }
+    public function getDescription() { return $this->description; }
     
-    function getPrice() { $this->price; }
+    public function getPrice() { return $this->price; }
     
-    function getPicturePath() { $this->picturePath; }
+    public function getPicturePath() { return $this->picturePath; }
 }
 ?>

@@ -2,3 +2,10 @@ id;restaurantId;name;description;price;picturePath
 1;1;Búza féle Kolbászos lepény;A Magyar Termék Nagydíjas és Érték és Minőség Nagydíjas Buza kolbász. A Buza család 97 éves söjtöri receptje.;1950;kepek/kolbaszoslepeny.jpg
 2;1;Chilis-marharagus lepény;A marhahús és a csípős íz kedvelőinek ez egy igazi élmény;2100;kepek/chilis_marharagus.jpg
 3;1;Görög csirkés lepény;Egy- egy falat és máris eszünkbe jut az a csodás nyár. Tradicionális görög ízek. A lepényt sült csirkemellel, krémes tzatzikivel és lágyan olvadó sajttal töltjük.;1990;kepek/gorogcsirkes.jpg
+4;1;Provanszi csirkeragus lepény;A selymes tejszín találkozása az illatos zöldfűszerekkel,hússal és a lágyan olvadó sajttal;1990;kepek/provanszislepeny.jpg
+5;1;Spenótos fetás lepény;A spenótos-fetás lepény, a színek és ízek kedvelőinek;1900;kepek/spenotosfetas.jpg
+6;1;Tepertős mini (100g);Tepertős ízesítésű aprósütemény;380;kepek/tepertosmini.jpg
+7;1;Túros mini (100g);Édes túrókrémmel töltött aprósütemény frissen sütve;380;kepek/turosmini.jpg
+8;1;Áfonyás muffin (90g);Áfonyadarabokkal ízesített muffin frissen sütve;480;kepek/afonyasmuffin.jpg
+9;1;Kakaós csiga (130g);Vajastésztás kakaós csiga frissen sütve;380;kepek/kakaoscsiga.jpg
+10;1;Sajtos pogácsa (100g);Sajtos pogácsa aprósütemény frissen sütve;380;kepek/sajtospogi.jpg
