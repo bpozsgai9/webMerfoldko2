@@ -39,8 +39,10 @@ $coolFood = new CoolFood();
         </table>
         <h1>Népszerű Éttermek:</h1>
         <div class="listRestaurant">
-          <?php $coolFood->listRestaurantArray() ?>  
+        <?php  $coolFood->listRestaurantArray() ?>
         </div>
     </div>
+    
+    
 </body>
 </html>

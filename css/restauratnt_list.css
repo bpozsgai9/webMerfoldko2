@@ -102,6 +102,8 @@ h1 {
 .buttons > .smiley {
     background-color: #303030;
     border-top-right-radius: 10px;
+    font-family: 'Bebas Neue';
+    color: tomato;
 }
 
 .buttons > .menu {
@@ -121,7 +123,3 @@ h1 {
     color: tomato;
     font-family: 'Bebas Neue';
 }
-
-/*.element > img:not(.except) {
-    filter: grayscale(100%);
-}*/

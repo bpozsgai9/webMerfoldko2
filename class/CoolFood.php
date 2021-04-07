@@ -43,12 +43,11 @@ class CoolFood {
             echo "<img src='" . $object->getPicturePath() . "' alt='étel kép'>";
             echo "<div class='container'>";
             echo "<div class='first'>";
-            echo "<div class='name'>" . $object->getRestaurantName() . "  (" . $object->getCity() . ")</div>";
+            echo "<div class='name'>" . $object->getRestaurantName() . " (" . $object->getCity() . ")</div>";
             echo "<div class='info'>";
             echo  $object->getRating() . " / 5 ⭐⭐⭐⭐<br /><br />";
             echo "✔️ SZÉP kártyás fizetés<br />";
             echo "✔️ Érintkezésmentes kiszállítás<br />";
-            echo "✔️ 6 vélemény<br />";
             echo "</div>";
             echo "</div>";
             echo "<div class='second'></div>";
