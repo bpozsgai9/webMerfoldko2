@@ -79,13 +79,11 @@ class CoolFood {
         echo "<tr>";
             echo "<th>Lepények</th>";
             echo "<th></th>";
-        echo "</tr>";
-
-        
+        echo "</tr>";        
         foreach ($objectArray as $object) {
             
             if (str_contains($object->getName(), 'lepény')) {
-                echo "bug";
+                
                 echo "<tr>";
                 echo "<td>";
                 echo "<div class='name'>" . $object->getId() . ". " . $object->getName() . "</div>";
