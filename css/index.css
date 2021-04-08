@@ -94,9 +94,11 @@ aside {
 a {
     text-decoration: none;
     color: #1abc9c;
+    text-decoration: underline;
 }
 
-a:hover {
+p > a {
+
     color: tomato;
     text-decoration: underline;
 }
@@ -163,16 +165,7 @@ a:hover {
     border-radius: 10px;
 }
 
-.except > div > img {
-    filter: grayscale(0%);
-}
-
-.except:hover {
-    text-decoration: none;
-}
-
 .polaroid > img {
-    filter: grayscale(100%);
     width: 200px;
     height: 200px;
     border-top-left-radius: 10px;
@@ -181,10 +174,6 @@ a:hover {
 
 span {
     color: tomato;
-}
-
-.tableDiv {
-    text-align: center;
 }
 
 table {

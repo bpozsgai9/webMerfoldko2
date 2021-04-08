@@ -151,6 +151,11 @@ class CoolFood {
         echo "<tr>";
         foreach ($cityData as $city) {
 
+            $actualName = ($city["name"] == "Szeged" ? "<a href='restauratnt_list.php'>" . 
+            $city["name"] . "- Kattints ide!</a>" : "" . $city["name"]);
+
+            $actualOpenDaytime = ($city["partOfDay"] == "DN" ? "☀️🌙" : "☀️");
+
             if ($counter == 5) {
                 echo "</tr>";
                 echo "<tr>";
@@ -159,7 +164,7 @@ class CoolFood {
                 echo "<div class='polaroid'>";
                     echo "<img src='kepek/" . $city["picPath"] . "' alt='Budapest'>";
                     echo "<div class='container'>";
-                    echo "<p>" . $city["name"] . "<br />"  . ($city["partOfDay"] == "DN" ? "☀️🌙" : "☀️") .  "</p>";
+                    echo "<p>" . $actualName . "<br />" . $actualOpenDaytime .  "</p>";
                     echo "</div>";
                 echo "</div>";
             echo "</td>";
