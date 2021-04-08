@@ -13,7 +13,8 @@ class CoolFood {
         //kapcsolat bont
     }
 
-    public function listUserArray() {
+    //példa
+    private function listUserArray() {
 
         $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
         $objectArray = $userTxtProcessor->getObjectArray();
