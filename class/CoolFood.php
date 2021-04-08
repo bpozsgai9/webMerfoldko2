@@ -5,7 +5,7 @@ class CoolFood {
 
     public function __construct() {
         
-        //self::listUserArray();
+        self::serializeCityData();
     }
 
     public function __destruct() {
@@ -118,6 +118,53 @@ class CoolFood {
             }
         }
         echo "</table>";
+    }
+
+    private function serializeCityData() {
+
+        $cityData = [
+            ["name" => "Szeged", "partOfDay" => "DN", "picPath" => "szeged.jpg"],
+            ["name" => "Budapest", "partOfDay" => "DN", "picPath" => "budapest.jpg"],
+            ["name" => "Debrecen", "partOfDay" => "DN", "picPath" => "budapest.jpg"],
+            ["name" => "Győr", "partOfDay" => "DN", "picPath" => "debrecen.jpg"],
+            ["name" => "Kecskemét", "partOfDay" => "D", "picPath" => "gyor.jpg"],
+            ["name" => "Miskolc", "partOfDay" => "DN", "picPath" => "miskolc.jpg"],
+            ["name" => "Pécs", "partOfDay" => "D", "picPath" => "pecs.jpg"],
+            ["name" => "Nyíregyháza", "partOfDay" => "D", "picPath" => "nyiregyhaza.jpg"],
+            ["name" => "Szombathely", "partOfDay" => "D", "picPath" => "szombathely.jpeg"],
+            ["name" => "Szentendre", "partOfDay" => "D", "picPath" => "szentendre.jpg"]
+        ];
+
+        $file = fopen("txt/city.txt", "w") or die("Fájl hiba!");
+        fwrite($file, serialize($cityData));
+        fclose($file);
+    }
+
+    public function listCityDataViaUnserialize() {
+
+        $file = fopen("txt/city.txt", "r") or die("Fájl hiba!");
+        $cityData = unserialize(fgets($file));
+        fclose($file);
+
+        $counter = 0;
+        echo "<tr>";
+        foreach ($cityData as $city) {
+
+            if ($counter == 5) {
+                echo "</tr>";
+                echo "<tr>";
+            }
+            echo "<td>";
+                echo "<div class='polaroid'>";
+                    echo "<img src='kepek/" . $city["picPath"] . "' alt='Budapest'>";
+                    echo "<div class='container'>";
+                    echo "<p>" . $city["name"] . "<br />"  . ($city["partOfDay"] == "DN" ? "☀️🌙" : "☀️") .  "</p>";
+                    echo "</div>";
+                echo "</div>";
+            echo "</td>";
+            $counter++;
+        }
+        echo "</tr>";
     }
 
     public function uploadFile() {

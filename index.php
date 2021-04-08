@@ -2,11 +2,6 @@
 require 'class/CoolFood.php';
 
 $coolFood = new CoolFood();
-
-if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
-    
-    $coolFood->uploadFile();
-}
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +56,12 @@ if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Feltölt" name="submit"><br>
                 </form>
+                <?php
+                    if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
+    
+                        $coolFood->uploadFile();
+                    }
+                ?>
             </div>
         </div>
             <!--új dolgok helye-->
@@ -98,92 +99,7 @@ if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
             <br />
             <div class="tableDiv">
                 <table>
-                    <tr>
-                        <td>
-                            <a class="except" href="restauratnt_list.php">
-                                <div class="polaroid">
-                                    <img src="kepek/szeged.jpg" alt="Szeged">
-                                    <div class="container">
-                                    <p>Szeged <span> - Kattints ide!</span><br />☀️🌙</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/budapest.jpg" alt="Budapest">
-                                <div class="container">
-                                <p>Budapest<br />☀️🌙</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/debrecen.jpg" alt="Debrecen">
-                                <div class="container">
-                                <p>Debrecen<br />☀️🌙</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/gyor.jpg" alt="Győr">
-                                <div class="container">
-                                <p>Győr<br />☀️🌙</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/kecskemet.jpg" alt="Kecskemét">
-                                <div class="container">
-                                <p>Kecskemét<br />☀️</p>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/miskolc.jpg" alt="Miskolc">
-                                <div class="container">
-                                <p>Miskolc<br />☀️🌙</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                            <img src="kepek/pecs.jpg" alt="Pécs">
-                            <div class="container">
-                            <p>Pécs<br />☀️</p>
-                            </div>
-                        </div>
-                    </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/nyiregyhaza.jpg" alt="Nyíregyháza">
-                                <div class="container">
-                                <p>Nyíregyháza<br />☀️</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/szombathely.jpeg" alt="Szombathely">
-                                <div class="container">
-                                <p>Szombathely<br />☀️</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="polaroid">
-                                <img src="kepek/szentendre.jpg" alt="Szentendre">
-                                <div class="container">
-                                <p>Szentendre<br />☀️</p>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php $coolFood->listCityDataViaUnserialize() ?>
                 </table>
             </div>
             <!--új dolgok vége-->
