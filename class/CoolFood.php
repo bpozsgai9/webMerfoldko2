@@ -127,7 +127,7 @@ class CoolFood {
             $target_dir = "kepek/userPic/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         
             if ($uploadOk == 0) {
             
@@ -160,8 +160,8 @@ class CoolFood {
         foreach ($objectArray as $object) {
             if (str_contains($object->getName(), $userName) && str_contains($object->getName(), $password)) {
 
-                //a session értéke legyen loggedIn
-                //ha a session értéke loggedIn
+                //a session értéke legyen a felhasználó Id-ja
+                //ha a session értéke felhasználó Id-ja
                 //akkor navigáljon át egy másik oldalra -> header('Location: valami.php');
                 //és echo kijelentkező submit
 
