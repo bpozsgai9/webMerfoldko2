@@ -154,6 +154,7 @@ class CoolFood {
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
         //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót
+        //az id növekedjen
 
     }
 
