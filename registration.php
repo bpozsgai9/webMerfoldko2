@@ -81,10 +81,7 @@
         </div>
 
     </fieldset>
-
     </form>
-
-
 <footer>
 
 </footer>

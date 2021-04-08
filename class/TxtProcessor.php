@@ -64,6 +64,7 @@ class TxtProcessor {
         //kapjon egy objectet, (pl.: new User() típus)
         
         try {
+            
             $myFile = fopen($fileName, "w");
 
             $line = $userObject->getId() . ";" .
