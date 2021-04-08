@@ -58,11 +58,28 @@ class TxtProcessor {
 
     }
 
-    public function writeobjectToFile($fileName, $objectType) {
+    public function writeobjectToFile($fileName, $userObject) {
 
         //Írjon bele plusz adatokat egy fájlba, regisztrációhoz
         //kapjon egy objectet, (pl.: new User() típus)
+        
+        try {
+            $myFile = fopen($fileName, "w");
 
+            $line = $userObject->getId() . ";" .
+                $userObject->getFirstName() . ";" .
+                $userObject->getLastName() . ";" .
+                $userObject->getEmail() . ";" . 
+                $userObject->getTelephone() . ";" .
+                $userObject->getBirthDate();
+        
+            fwrite($myFile, $line);
+
+        } catch (Exception $e) {
+            
+            echo "Hiba: " . $e;
+        }
+        fclose($myFile);
     }
 }
 ?>
