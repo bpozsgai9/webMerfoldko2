@@ -120,6 +120,34 @@ class CoolFood {
         echo "</table>";
     }
 
+    public function uploadFile() {
+
+        if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
+    
+            $target_dir = "kepek/userPic/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        
+            if ($uploadOk == 0) {
+            
+                echo "Hiba: A fájl nem lett feltöltve!";
+        
+            } else {
+            
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    
+                    echo htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " fel lett töltve!";
+                    //header('Location: index.php');
+        
+                } else {
+                    
+                    echo "Hiba: Feltöltés közben hiba lépett fel!";
+                }
+            }
+        }
+    }
+
     public function logIn($userName, $password) {
 
         //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
