@@ -1,3 +1,10 @@
+<?php
+require 'class/CoolFood.php';
+
+$coolFood = new CoolFood();
+$coolFood->uploadFile();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -20,7 +27,7 @@
             <div class="afterMe">
                 <a href="registration.php">Regisztráció</a>
             </div>
-        </nav>
+            </nav>
     </aside>
     <header>
         <div class="title">
@@ -42,6 +49,14 @@
                     <input type="text" placeholder="Merre laksz?">
                     <input type="button" value="Keress meg!">
                 </div>
+                <br><br>
+                <h1>
+                    Fotózd le kedvenc ételed és töltsd fel nekünk, hogy mi is lássuk!
+                </h1>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Feltölt" name="submit"><br>
+                </form>
             </div>
         </div>
             <!--új dolgok helye-->

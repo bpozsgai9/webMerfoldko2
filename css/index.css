@@ -37,7 +37,7 @@ header {
 
 .greetBox {
     padding-top: 50px;
-    height: 200px;
+    height: 350px;
     padding-bottom: 50px;
 }
 
@@ -61,6 +61,18 @@ h1 {
     border: none;
     font-family: 'Bebas Neue';
     font-size: 20px;
+}
+
+input[type=submit] {
+
+    font-family: 'Bebas Neue';
+    height: 50px;
+    width: 100px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px
 }
 
 .searchBox > input[type=text] {

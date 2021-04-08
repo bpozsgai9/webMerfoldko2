@@ -124,7 +124,7 @@ class CoolFood {
 
         if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
     
-            $target_dir = "kepek/userPic/";
+            $target_dir = "kepek/uploads/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -136,8 +136,8 @@ class CoolFood {
             } else {
             
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    
-                    echo htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " fel lett töltve!";
+
+                    echo "<div style='z-index: -1'>" . basename( $_FILES["fileToUpload"]["name"]) . " fel lett töltve! Köszönjük a képet!</div>";
                     //header('Location: index.php');
         
                 } else {
@@ -161,6 +161,7 @@ class CoolFood {
             if (str_contains($object->getName(), $userName) && str_contains($object->getName(), $password)) {
 
                 //a session értéke legyen a felhasználó Id-ja
+                //$_SESSION["userId"] = $userId;
                 //ha a session értéke felhasználó Id-ja
                 //akkor navigáljon át egy másik oldalra -> header('Location: valami.php');
                 //és echo kijelentkező submit
