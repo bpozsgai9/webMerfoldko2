@@ -120,7 +120,7 @@ class CoolFood {
         echo "</table>";
     }
 
-    public function logIn() {
+    public function logIn($userName, $password) {
 
         //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
         //paraméterül kapja a bejelentekzési adatokat
@@ -130,7 +130,7 @@ class CoolFood {
         $objectArray = $userTxtProcessor->getObjectArray();
         
         foreach ($objectArray as $object) {
-            if (str_contains($object->getName(), $_POST['userName']) && str_contains($object->getName(), $_POST['password'])) {
+            if (str_contains($object->getName(), $userName) && str_contains($object->getName(), $password)) {
 
                 //a session értéke legyen loggedIn
                 //ha a session értéke loggedIn
