@@ -117,6 +117,44 @@ class CoolFood {
                 echo "</tr>";
             }
         }
-        echo "</table>"; 
+        echo "</table>";
     }
+
+    public function logIn() {
+
+        //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
+        //paraméterül kapja a bejelentekzési adatokat
+        //mégnézi hogy a listban talál-e ilyet
+        /*
+        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+        $objectArray = $userTxtProcessor->getObjectArray();
+        
+        foreach ($objectArray as $object) {
+            if (str_contains($object->getName(), $_POST['userName']) && str_contains($object->getName(), $_POST['password'])) {
+
+                //a session értéke legyen loggedIn
+                //ha a session értéke loggedIn
+                //akkor navigáljon át egy másik oldalra
+                //és echo kijelentkező submit
+
+            }
+        }
+        */
+    }
+
+    public function logOut() {
+
+        //ha a kijelnkező submit értéket kap
+        //törölje a session értékét
+        //és ha a session értéke törölve van akkor ki kell hogy dobjon az oldlaról
+    }
+
+    public function register() {
+
+        //kapja paraméterül a form-ból érkező adatokat
+        //készítsen egy new User() típusú objectet
+        //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót
+
+    }
+
 }

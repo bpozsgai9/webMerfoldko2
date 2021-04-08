@@ -51,5 +51,22 @@ class TxtProcessor {
     }
 
     public function getObjectArray() { return $this->objectArray; }
+
+    public function getActualHighestId($fileName) {
+
+        //Megállaíptja a fájlban lévő legmagasabb id-t
+
+    }
+
+    public function writeobjectToFile($fileName, $objectType) {
+
+        //Írjon bele plusz adatokat egy fájlba, regisztrációhoz
+        //kapjon egy objectet, (pl.: new User() típus)
+
+    }
+
+    
+
+
 }
 ?>
