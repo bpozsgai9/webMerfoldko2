@@ -64,9 +64,5 @@ class TxtProcessor {
         //kapjon egy objectet, (pl.: new User() típus)
 
     }
-
-    
-
-
 }
 ?>

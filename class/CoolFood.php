@@ -134,7 +134,7 @@ class CoolFood {
 
                 //a session értéke legyen loggedIn
                 //ha a session értéke loggedIn
-                //akkor navigáljon át egy másik oldalra
+                //akkor navigáljon át egy másik oldalra -> header('Location: valami.php');
                 //és echo kijelentkező submit
 
             }
