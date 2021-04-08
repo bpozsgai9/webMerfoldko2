@@ -122,8 +122,6 @@ class CoolFood {
 
     public function uploadFile() {
 
-        if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
-    
             $target_dir = "kepek/uploads/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
@@ -145,7 +143,6 @@ class CoolFood {
                     echo "Hiba: Feltöltés közben hiba lépett fel!";
                 }
             }
-        }
     }
 
     public function logIn($userName, $password) {

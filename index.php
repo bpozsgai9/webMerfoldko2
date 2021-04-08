@@ -2,7 +2,11 @@
 require 'class/CoolFood.php';
 
 $coolFood = new CoolFood();
-$coolFood->uploadFile();
+
+if (!empty($_POST["submit"]) && isset($_POST["submit"])) {
+    
+    $coolFood->uploadFile();
+}
 ?>
 
 <!DOCTYPE html>
