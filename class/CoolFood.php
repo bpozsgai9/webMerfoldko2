@@ -199,6 +199,16 @@ class CoolFood {
     }
 
     public function logIn($userName, $password) {
+        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+        $objectArray = $userTxtProcessor->getObjectArray();
+        foreach ($objectArray as $object) {
+            if (str_contains($object->getEmail(), $userName) && str_contains($object->getPassword(), $password)) {
+                header("Location: restauratnt_list.php");
+            }
+
+        }
+        echo "<br />";
+        echo "<div style='color: red;'><strong><u> Hibás adatok</u></strong></div>";
 
         //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
         //paraméterül kapja a bejelentekzési adatokat

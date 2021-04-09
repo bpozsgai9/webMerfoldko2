@@ -1,3 +1,10 @@
+<?php
+session_start();
+require 'class/CoolFood.php';
+$coolfood = New CoolFood();
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -45,9 +52,15 @@
             <div id="logIn">
                 <label>
 
-                    <input type="submit" value="Bejelentkezés">
+                    <input type="submit" name="login" value="Bejelentkezés">
                 </label>
             </div>
+            <?php
+            if(isset($_POST["login"])){
+                $coolfood->logIn($_POST["email"],$_POST["password"]);
+            }
+
+            ?>
             <div class="register">
                 <a href="registration.php">
                     Kattints ide ha még nincsen fiókod.

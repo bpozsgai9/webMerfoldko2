@@ -55,7 +55,15 @@ class TxtProcessor {
     public function getActualHighestId($fileName) {
 
         //Megállaíptja a fájlban lévő legmagasabb id-t
+        $file = fopen("$fileName", "r");
+        $firstLineOfFile = fgets($file);
+        $i = 0;
+        while(($line = fgets($file))!==false){
 
+            $i++;
+
+        }
+        return $i;
     }
 
     public function writeobjectToFile($fileName, $userObject) {
@@ -70,6 +78,7 @@ class TxtProcessor {
             $line = $userObject->getId() . ";" .
                 $userObject->getFirstName() . ";" .
                 $userObject->getLastName() . ";" .
+                $userObject->getPassword() . ";" .
                 $userObject->getEmail() . ";" . 
                 $userObject->getTelephone() . ";" .
                 $userObject->getBirthDate();

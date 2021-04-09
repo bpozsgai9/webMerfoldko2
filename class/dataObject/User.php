@@ -4,6 +4,7 @@ class User {
     private $id;
     private $firstName;
     private $lastName;
+    private $password;
     private $email;
     private $telephone;
     private $birthDate;
@@ -15,7 +16,7 @@ class User {
         switch (func_num_args()) {
             
             case 6:
-                self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5]);
+                self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6]);
             break;
             
             case 1:
@@ -25,11 +26,12 @@ class User {
         }
     }
 
-    public function __construct1($id, $firstName, $lastName, $email, $telephone, $birthDate) {
+    public function __construct1($id, $firstName, $lastName,$password, $email, $telephone, $birthDate) {
 
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->password = $password;
         $this->email = $email;
         $this->telephone = $telephone;
         $this->birthDate = $birthDate;
@@ -42,9 +44,10 @@ class User {
         $this->id = (int)$arrivingData[0];
         $this->firstName = $arrivingData[1];
         $this->lastName = $arrivingData[2];
-        $this->email = $arrivingData[3];
-        $this->telephone = $arrivingData[4];
-        $this->birthDate = $arrivingData[5];
+        $this->password = $arrivingData[3];
+        $this->email = $arrivingData[4];
+        $this->telephone = $arrivingData[5];
+        $this->birthDate = $arrivingData[6];
     }
 
     public function __destruct() {
@@ -57,6 +60,7 @@ class User {
     public function getFirstName() { return $this->firstName; }
 
     public function getLastName() { return $this->lastName; }
+    public function getPassword() { return $this->password;}
 
     public function getEmail() { return $this->email; }
 
