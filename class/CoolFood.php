@@ -240,7 +240,10 @@ class CoolFood {
     }
 
     public function register($id,$vezeteknev,$keresztnev,$jelszo,$jelszoujra,$email,$telszam,$szuldat) {
-
+        if(strlen($jelszo)<=5){
+            echo '<div style="color: red;font-size:40px "><b>Túl rövid jelszó!</b></div>';
+        }
+        else {
         $id =1+TxtProcessor::getActualHighestId("txt/user.txt");
         $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
         $objectArray = $userTxtProcessor->getObjectArray();
@@ -261,6 +264,7 @@ class CoolFood {
         }
         else{
             echo '<div>A jelszók nem egyeznek!!</div>';
+        }
         }
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
