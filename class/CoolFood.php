@@ -1,5 +1,6 @@
 <?php
 require 'TxtProcessor.php';
+include_once 'class/dataObject/User.php';
 
 class CoolFood {
 
@@ -238,8 +239,29 @@ class CoolFood {
         //és ha a session értéke törölve van akkor ki kell hogy dobjon az oldlaról
     }
 
-    public function register() {
+    public function register($id,$vezeteknev,$keresztnev,$jelszo,$jelszoujra,$email,$telszam,$szuldat) {
 
+        $id =1+TxtProcessor::getActualHighestId("txt/user.txt");
+        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+        $objectArray = $userTxtProcessor->getObjectArray();
+        if($jelszo == $jelszoujra ){
+            foreach ($objectArray as $object ){
+                if(str_contains($object->getEmail(),$email)){
+                    echo '<div>Ez az email cím már foglalt!</div>';
+                    break;
+                }
+                else{
+                    $userdata = new User($id,$vezeteknev,$keresztnev,$jelszo,$email,$telszam,$szuldat);
+                    TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
+                    break;
+                }
+
+            }
+
+        }
+        else{
+            echo '<div>A jelszók nem egyeznek!!</div>';
+        }
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
         //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót

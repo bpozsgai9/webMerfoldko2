@@ -15,7 +15,7 @@ class User {
         
         switch (func_num_args()) {
             
-            case 6:
+            case 7:
                 self::__construct1($argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6]);
             break;
             
@@ -60,6 +60,7 @@ class User {
     public function getFirstName() { return $this->firstName; }
 
     public function getLastName() { return $this->lastName; }
+
     public function getPassword() { return $this->password;}
 
     public function getEmail() { return $this->email; }

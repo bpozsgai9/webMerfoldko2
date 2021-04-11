@@ -52,28 +52,27 @@ class TxtProcessor {
 
     public function getObjectArray() { return $this->objectArray; }
 
-    public function getActualHighestId($fileName) {
+    public static function getActualHighestId($fileName) {
 
-        //Megállaíptja a fájlban lévő legmagasabb id-t
-        $file = fopen("$fileName", "r");
-        $firstLineOfFile = fgets($file);
-        $i = 0;
-        while(($line = fgets($file))!==false){
-
-            $i++;
-
+        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+        $objectArray = $userTxtProcessor->getObjectArray();
+        $maxID = 0;
+        foreach ($objectArray as $object){
+            if($object->getId()>$maxID){
+                $maxID = $object->getId();
+            }
         }
-        return $i;
+        return $maxID;
     }
 
-    public function writeobjectToFile($fileName, $userObject) {
+    public static function writeobjectToFile($fileName, $userObject) {
 
         //Írjon bele plusz adatokat egy fájlba, regisztrációhoz
         //kapjon egy objectet, (pl.: new User() típus)
         
         try {
             
-            $myFile = fopen($fileName, "w");
+            $myFile = fopen($fileName, "a");
 
             $line = $userObject->getId() . ";" .
                 $userObject->getFirstName() . ";" .

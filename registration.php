@@ -1,3 +1,9 @@
+<?php
+session_start();
+require  'class/CoolFood.php';
+$coolfood = New CoolFood();
+
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -19,7 +25,7 @@
 
 
 </header>
-<form>
+<form method="post">
     <div class="register">
         <b>Hozd létre fiókodat.</b>
     </div>
@@ -42,6 +48,14 @@
             <div>E-mail</div>
             <label>
                 <input type="email" name="email" placeholder="E-mail" required>
+            </label>
+            <div>Jelszó</div>
+            <label>
+                <input type="password" name="password1" placeholder="Jelszó" required>
+            </label>
+            <div>Jelszó újra</div>
+            <label>
+                <input type="password" name="password2" placeholder="Jelszó" required>
             </label>
             <br/>
             <div>Telefonszám</div>
@@ -71,11 +85,19 @@
 
             <div id="also">
                 <label>
-                    <input type="submit" name="regisztralok" value="FIÓK LÉTREHOZÁSA">
+                    <input type="submit" name="regiszt" value="FIÓK LÉTREHOZÁSA">
                 </label>
                 <label>
                     <input type="reset" name="ujra" value="ALAPHELYZET">
                 </label>
+                <?php
+                if(isset($_POST["regiszt"])){
+                    $coolfood->register(1,
+                        $_POST["csaladnev"],$_POST["keresztnev"],$_POST["password1"],$_POST["password2"],
+                        $_POST["email"],$_POST["phone"],$_POST["szuldat"]);
+                }
+
+                ?>
             </div>
 
         </div>
