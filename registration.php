@@ -2,7 +2,6 @@
 session_start();
 require  'class/CoolFood.php';
 $coolfood = New CoolFood();
-
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -90,15 +89,15 @@ $coolfood = New CoolFood();
                 <label>
                     <input type="reset" name="ujra" value="ALAPHELYZET">
                 </label>
-                <?php
-                if(isset($_POST["regiszt"])){
-                    $coolfood->register(1,
-                        $_POST["csaladnev"],$_POST["keresztnev"],$_POST["password1"],$_POST["password2"],
-                        $_POST["email"],$_POST["phone"],$_POST["szuldat"]);
-                }
-
-                ?>
             </div>
+            <?php
+            if(isset($_POST["regiszt"])){
+                $coolfood->register(1, $_POST["csaladnev"], $_POST["keresztnev"],
+                        $_POST["password1"], $_POST["password2"],
+                                 $_POST["email"], $_POST["phone"], $_POST["szuldat"]);
+            }
+
+            ?>
 
         </div>
 

@@ -54,13 +54,12 @@ $coolfood = New CoolFood();
 
                     <input type="submit" name="login" value="Bejelentkezés">
                 </label>
+                <?php
+                if(isset($_POST["login"])){
+                    $coolfood->logIn($_POST["email"],$_POST["password"]);
+                }
+                ?>
             </div>
-            <?php
-            if(isset($_POST["login"])){
-                $coolfood->logIn($_POST["email"],$_POST["password"]);
-            }
-
-            ?>
             <div class="register">
                 <a href="registration.php">
                     Kattints ide ha még nincsen fiókod.

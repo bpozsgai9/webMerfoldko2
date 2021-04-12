@@ -200,16 +200,27 @@ class CoolFood {
     }
 
     public function logIn($userName, $password) {
-        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
-        $objectArray = $userTxtProcessor->getObjectArray();
-        foreach ($objectArray as $object) {
-            if (str_contains($object->getEmail(), $userName) && str_contains($object->getPassword(), $password)) {
-                header("Location: restauratnt_list.php");
+
+            if(trim($userName) === ""
+                || trim($password) ===""){
+                echo "<div style='color: red'><u>Hiba</u>: Adj meg minden adatot!</div>";
+            }
+            else{
+                $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+                $objectArray = $userTxtProcessor->getObjectArray();
+                foreach ($objectArray as $object) {
+                    if (str_contains($object->getEmail(), $userName)
+                        && str_contains($object->getPassword(), $password)) {
+                        header("Location: restauratnt_list.php");
+                    }
+
+                }
+                echo "<br />";
+                echo "<div style='color: red;'><strong><u> Hibás adatok</u></strong></div>";
+
+
             }
 
-        }
-        echo "<br />";
-        echo "<div style='color: red;'><strong><u> Hibás adatok</u></strong></div>";
 
         //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
         //paraméterül kapja a bejelentekzési adatokat
@@ -241,30 +252,30 @@ class CoolFood {
 
     public function register($id,$vezeteknev,$keresztnev,$jelszo,$jelszoujra,$email,$telszam,$szuldat) {
         if(strlen($jelszo)<=5){
-            echo '<div style="color: red;font-size:40px "><b>Túl rövid jelszó!</b></div>';
+            echo '<div style="color: red;font-size:40px;text-align: center "><b><u>Túl rövid jelszó!</u></b></div>';
         }
-        else {
-        $id =1+TxtProcessor::getActualHighestId("txt/user.txt");
-        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
-        $objectArray = $userTxtProcessor->getObjectArray();
-        if($jelszo == $jelszoujra ){
-            foreach ($objectArray as $object ){
-                if(str_contains($object->getEmail(),$email)){
-                    echo '<div>Ez az email cím már foglalt!</div>';
-                    break;
-                }
-                else{
-                    $userdata = new User($id,$vezeteknev,$keresztnev,$jelszo,$email,$telszam,$szuldat);
-                    TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
-                    break;
+        else{
+            $id =$id+TxtProcessor::getActualHighestId("txt/user.txt");
+            $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
+            $objectArray = $userTxtProcessor->getObjectArray();
+            if($jelszo == $jelszoujra ){
+                foreach ($objectArray as $object ){
+                    if(str_contains($object->getEmail(),$email)){
+                        echo '<div>Ez az email cím már foglalt!</div>';
+                        break;
+                    }
+                    else{
+                        $userdata = new User($id,$vezeteknev,$keresztnev,$jelszo,$email,$telszam,$szuldat);
+                        TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
+                        break;
+                    }
+
                 }
 
             }
-
-        }
-        else{
-            echo '<div>A jelszók nem egyeznek!!</div>';
-        }
+            else{
+                echo '<div>A jelszók nem egyeznek!!</div>';
+            }
         }
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
