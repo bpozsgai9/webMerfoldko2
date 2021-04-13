@@ -58,7 +58,9 @@ class TxtProcessor {
         $objectArray = $userTxtProcessor->getObjectArray();
         $maxID = 0;
         foreach ($objectArray as $object){
-            if($object->getId()>$maxID){
+            
+            if ($object->getId() > $maxID) {
+                
                 $maxID = $object->getId();
             }
         }
@@ -74,7 +76,7 @@ class TxtProcessor {
             
             $myFile = fopen($fileName, "a");
 
-            $line = $userObject->getId() . ";" .
+            $line = "\n" . $userObject->getId() . ";" .
                 $userObject->getFirstName() . ";" .
                 $userObject->getLastName() . ";" .
                 $userObject->getPassword() . ";" .
@@ -82,7 +84,7 @@ class TxtProcessor {
                 $userObject->getTelephone() . ";" .
                 $userObject->getBirthDate();
         
-            fwrite($myFile, "\n" . $line);
+            fwrite($myFile, $line);
 
         } catch (Exception $e) {
             
