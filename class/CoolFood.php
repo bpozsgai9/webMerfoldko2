@@ -282,7 +282,7 @@ class CoolFood {
                 echo '<div>A jelszók nem egyeznek!!</div>';
             }
         }
-        //header("Location: login.php");
+        header("Location: login.php");
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
         //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót
