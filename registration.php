@@ -1,5 +1,4 @@
 <?php
-session_start();
 require  'class/CoolFood.php';
 $coolfood = New CoolFood();
 ?>

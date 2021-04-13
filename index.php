@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'class/CoolFood.php';
 
 $coolFood = new CoolFood();
@@ -20,12 +21,21 @@ $coolFood = new CoolFood();
             <div class="afterMe">
                 <a href="https://www.nak.hu/sajto/sajtokozlemenyek/102649-minden-nap-egy-alma-az-orvost-tavol-tartja">🍏</a>
             </div>
+            <?php if(!isset($_SESSION["userId"])) {?>
             <div class="afterMe2">
                 <a href="login.php">Bejelentkezés</a>
             </div>
             <div class="afterMe">
                 <a href="registration.php">Regisztráció</a>
             </div>
+            <?php } else {?>
+            <div class="afterMe2">
+                <a href="profil.php">Profil</a>
+            </div>
+            <div class="afterMe">
+                <a href="logout.php">Kijelentkezés</a>
+            </div>
+            <?php }?>
             </nav>
     </aside>
     <header>

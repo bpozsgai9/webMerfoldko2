@@ -35,7 +35,7 @@ class CoolFood {
     }
 
     public function listRestaurantArray() {
-        
+
         $restaurantTxtProcessor = new TxtProcessor("txt/restaurant.txt", "restaurant");
         $objectArray = $restaurantTxtProcessor->getObjectArray();
 
@@ -152,7 +152,7 @@ class CoolFood {
         echo "<tr>";
         foreach ($cityData as $city) {
 
-            $actualName = ($city["name"] == "Szeged" ? "<a href='restauratnt_list.php'>" . 
+            $actualName = ($city["name"] == "Szeged" ? "<a href='restauratnt_list.php'>" .
             $city["name"] . "- Kattints ide!</a>" : "" . $city["name"]);
 
             $actualOpenDaytime = ($city["partOfDay"] == "DN" ? "☀️🌙" : "☀️");
@@ -211,7 +211,8 @@ class CoolFood {
                 foreach ($objectArray as $object) {
                     if (str_contains($object->getEmail(), $userName)
                         && str_contains($object->getPassword(), $password)) {
-                        header("Location: restauratnt_list.php");
+                        $_SESSION["userId"] = $object->getId();
+                        header("Location: index.php");
                     }
 
                 }
