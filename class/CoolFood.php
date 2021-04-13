@@ -5,7 +5,8 @@ include_once 'class/dataObject/User.php';
 class CoolFood {
 
     public function __construct() {
-        
+
+        session_start();
         self::serializeCityData();
     }
 
@@ -249,6 +250,9 @@ class CoolFood {
         //ha a kijelnkező submit értéket kap
         //törölje a session értékét
         //és ha a session értéke törölve van akkor ki kell hogy dobjon az oldlaról
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
     }
 
     public function register($id,$vezeteknev,$keresztnev,$jelszo,$jelszoujra,$email,$telszam,$szuldat) {

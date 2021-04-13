@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'class/CoolFood.php';
 
 $coolFood = new CoolFood();
@@ -33,7 +32,18 @@ $coolFood = new CoolFood();
                 <a href="profil.php">Profil</a>
             </div>
             <div class="afterMe">
-                <a href="logout.php">Kijelentkezés</a>
+
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <input type="submit" value="Kijelentkzés" name="logOutSubmit">
+                </form>    
+                
+                <?php
+                if (isset($_POST["logOutSubmit"])) {
+                    
+                    $coolFood->logOut();
+                }
+                ?>
+
             </div>
             <?php }?>
             </nav>
