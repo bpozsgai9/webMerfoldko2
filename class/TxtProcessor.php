@@ -82,7 +82,7 @@ class TxtProcessor {
                 $userObject->getTelephone() . ";" .
                 $userObject->getBirthDate();
         
-            fwrite($myFile, $line);
+            fwrite($myFile, "\n" . $line);
 
         } catch (Exception $e) {
             

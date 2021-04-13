@@ -270,7 +270,7 @@ class CoolFood {
                         break;
                     }
                     else{
-                        $userdata = new User($id,$vezeteknev,$keresztnev,$jelszo,$email,$telszam,$szuldat);
+                        $userdata = new User($id, $vezeteknev, $keresztnev, $jelszo, $email, $telszam, $szuldat);
                         TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
                         break;
                     }
@@ -282,6 +282,7 @@ class CoolFood {
                 echo '<div>A jelszók nem egyeznek!!</div>';
             }
         }
+        header("Location: login.php");
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
         //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót
