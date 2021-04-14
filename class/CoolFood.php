@@ -200,25 +200,29 @@ class CoolFood {
             }
     }
 
-    public function logIn($userName, $password) {
+    public function logIn( $userName, $password ) {
 
-            if(trim($userName) === ""
-                || trim($password) ===""){
+            if(trim($userName) === "" || trim($password) ===""){
                 echo "<div style='color: red'><u>Hiba</u>: Adj meg minden adatot!</div>";
             }
-            else{
+
+            else {
+
                 $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
                 $objectArray = $userTxtProcessor->getObjectArray();
-                foreach ($objectArray as $object) {
-                    if (str_contains($object->getEmail(), $userName)
-                        && str_contains($object->getPassword(), $password)) {
-                        $_SESSION["userId"] = $object->getId();
-                        header("Location: index.php");
+
+                foreach ( $objectArray as $object ) {
+
+                    if ( str_contains( $object->getEmail(), $userName )
+                        && str_contains( $object->getPassword(), $password) ) {
+
+                                $_SESSION["userId"] = $object->getId();
+                                header("Location: index.php");
                     }
 
                 }
                 echo "<br />";
-                echo "<div style='color: red;'><strong><u> Hibás adatok</u></strong></div>";
+                echo "<div style='color: red;'> <strong><u>Hibás adatok</u></strong> </div>";
 
 
             }
@@ -255,22 +259,31 @@ class CoolFood {
         header("Location: login.php");
     }
 
-    public function register($id,$vezeteknev,$keresztnev,$jelszo,$jelszoujra,$email,$telszam,$szuldat) {
-        if(strlen($jelszo)<=5){
+    public function register( $id, $firstName, $lastName, $password, $password2, $email, $phonenumber, $birthDate ) {
+
+        if(strlen($password)<=5){
+
             echo '<div style="color: red;font-size:40px;text-align: center "><b><u>Túl rövid jelszó!</u></b></div>';
+
         }
         else{
-            $id =$id+TxtProcessor::getActualHighestId("txt/user.txt");
+
+            $id = $id + TxtProcessor::getActualHighestId("txt/user.txt");
             $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
             $objectArray = $userTxtProcessor->getObjectArray();
-            if($jelszo == $jelszoujra ){
-                foreach ($objectArray as $object ){
-                    if(str_contains($object->getEmail(),$email)){
+
+            if( $password == $password2 ){
+
+                foreach ( $objectArray as $object ){
+
+                    if( str_contains($object->getEmail(),$email) ){
+
                         echo '<div>Ez az email cím már foglalt!</div>';
                         break;
                     }
                     else{
-                        $userdata = new User($id, $vezeteknev, $keresztnev, $jelszo, $email, $telszam, $szuldat);
+
+                        $userdata = new User( $id, $firstName, $lastName, $password, $email, $phonenumber, $birthDate );
                         TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
                         break;
                     }
@@ -279,6 +292,7 @@ class CoolFood {
 
             }
             else{
+
                 echo '<div>A jelszók nem egyeznek!!</div>';
             }
         }

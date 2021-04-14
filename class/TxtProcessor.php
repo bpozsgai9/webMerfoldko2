@@ -52,7 +52,7 @@ class TxtProcessor {
 
     public function getObjectArray() { return $this->objectArray; }
 
-    public static function getActualHighestId($fileName) {
+    public static function getActualHighestId( $fileName ) {
 
         $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
         $objectArray = $userTxtProcessor->getObjectArray();

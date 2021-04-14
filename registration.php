@@ -1,6 +1,8 @@
 <?php
+
 require  'class/CoolFood.php';
 $coolfood = New CoolFood();
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -37,10 +39,10 @@ $coolfood = New CoolFood();
         <div class="belso">
             <div class="nev">Vezetéknév<span>Keresztnév</span></div>
             <label>
-                <input type="text" name="csaladnev" placeholder="Vezetéknév" required>
+                <input type="text" name="firstName" placeholder="Vezetéknév" required>
             </label>
             <label>
-                <input type="text" name="keresztnev" placeholder="Keresztnév" required>
+                <input type="text" name="lastName" placeholder="Keresztnév" required>
             </label>
             <br/>
             <div>E-mail</div>
@@ -67,7 +69,7 @@ $coolfood = New CoolFood();
 
             <div>Születési dátum</div>
             <label>
-                <input type="date" name="szuldat">
+                <input type="date" name="birthDate">
             </label>
             <br/>
             <label>
@@ -83,17 +85,17 @@ $coolfood = New CoolFood();
 
             <div id="also">
                 <label>
-                    <input type="submit" name="regiszt" value="FIÓK LÉTREHOZÁSA">
+                    <input type="submit" name="regist" value="FIÓK LÉTREHOZÁSA">
                 </label>
                 <label>
-                    <input type="reset" name="ujra" value="ALAPHELYZET">
+                    <input type="reset" name="reset" value="ALAPHELYZET">
                 </label>
             </div>
             <?php
-            if(isset($_POST["regiszt"])){
-                $coolfood->register(1, $_POST["csaladnev"], $_POST["keresztnev"],
-                        $_POST["password1"], $_POST["password2"],
-                                 $_POST["email"], $_POST["phone"], $_POST["szuldat"]);
+            if(isset($_POST["regist"])){
+                 $coolfood->register(1, $_POST["firstName"],
+                        $_POST["lastName"], $_POST["password1"], $_POST["password2"],
+                                 $_POST["email"], $_POST["phone"], $_POST["birthDate"]);
             }
 
             ?>
