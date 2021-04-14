@@ -261,10 +261,39 @@ class CoolFood {
 
     public function register( $id, $firstName, $lastName, $password, $password2, $email, $phonenumber, $birthDate ) {
 
-        if(strlen($password)<=5){
+        if(trim($firstName) === "" || trim($lastName) === "") {
 
-            echo '<div style="color: red;font-size:40px;text-align: center "><b><u>Túl rövid jelszó!</u></b></div>';
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba: </u> Név megadása kötelező!</b></div>';
+        }
 
+        if(trim($password2) === "" || trim($password) === "") {
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba: </u> Jelszó megadása kötelező!</b></div>';
+        }
+
+        if(trim($email) === "" ) {
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba: </u> Email megadása kötelező!</b></div>';
+        }
+
+
+        if( strlen( $password ) <= 5 ){
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba: </u> Túl rövid jelszó!</b></div>';
+
+            $_SESSION["failedToReg"] = 1;
+        }
+
+        elseif(!is_numeric($phonenumber)){
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba: </u> Telefonszám csak számokból állhat!</b></div>';
+
+            $_SESSION["failedToReg"] = 1;
         }
         else{
 
@@ -278,7 +307,10 @@ class CoolFood {
 
                     if( str_contains($object->getEmail(),$email) ){
 
-                        echo '<div>Ez az email cím már foglalt!</div>';
+                        echo '<div style="color: red;font-size:40px;text-align: center ">
+                              <b><u>Hiba: </u>Ez az email foglalt!</b></div>';
+
+                        $_SESSION["failedToReg"]=1;
                         break;
                     }
                     else{
@@ -293,10 +325,13 @@ class CoolFood {
             }
             else{
 
-                echo '<div>A jelszók nem egyeznek!!</div>';
+                echo '<div style="color: red;font-size:40px;text-align: center ">
+                                <b><u>Hiba: </u> A jelszók nem egyeznek!</b></div>';
+
+                $_SESSION["failedToReg"]=1;
             }
         }
-        header("Location: login.php");
+
         //kapja paraméterül a form-ból érkező adatokat
         //készítsen egy new User() típusú objectet
         //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót

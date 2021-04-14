@@ -28,13 +28,10 @@ $coolFood = new CoolFood();
                 <a href="registration.php">Regisztráció</a>
             </div>
             <?php } else {?>
-            <div class="afterMe2">
-                <a href="profil.php">Profil</a>
-            </div>
-            <div class="afterMe">
+            <div class="logOut">
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <input type="submit" value="Kijelentkzés" name="logOutSubmit">
+                    <input type="submit" value="Kijelentkezés" name="logOutSubmit">
                 </form>    
                 
                 <?php

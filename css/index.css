@@ -51,7 +51,19 @@ h1 {
     border: 2px solid #1abc9c;
     border-radius: 5px;
 }
+input[name="logOutSubmit"]{
+    font-family: 'Bebas Neue';
+    height: 50px;
+    width: 150px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
 
+
+}
 .searchBox > input[type=button] {
     float: right;
     height: 50px;
@@ -63,7 +75,7 @@ h1 {
     font-size: 20px;
 }
 
-input[type=submit] {
+input[name="submit"] {
 
     font-family: 'Bebas Neue';
     height: 50px;

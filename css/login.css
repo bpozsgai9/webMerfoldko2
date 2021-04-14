@@ -2,7 +2,7 @@ body {
     margin-right: 280px;
     margin-left: 280px;
     font-family: 'Bebas Neue';
-    margin-top: 105px;
+    margin-top: 100px;
     color: #1abc9c;
     letter-spacing: 0.2em;
 }
@@ -44,6 +44,7 @@ input[type=submit] {
 
 .register {
     padding-top: 37px;
+    font-size: 90px;
 }
 
 i {
@@ -59,7 +60,6 @@ i {
     padding-top: 15px;
     padding-left: 7px;
     color: tomato;
-    min-width: 25px;
     text-align: center;
 }
 

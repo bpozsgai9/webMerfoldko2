@@ -38,11 +38,16 @@ $coolfood = New CoolFood();
         </legend>
         <div class="belso">
             <div class="nev">Vezetéknév<span>Keresztnév</span></div>
+            <?php if(isset($_SESSION["failedToReg"])) {?>
             <label>
-                <input type="text" name="firstName" placeholder="Vezetéknév" required>
+                <input type="text" name="firstName" placeholder="Vezetéknév" required
+                       value="<?php if(isset($_POST['firstName'])) echo $_POST["firstName"];?>" >
+
             </label>
             <label>
-                <input type="text" name="lastName" placeholder="Keresztnév" required>
+                <input type="text" name="lastName" placeholder="Keresztnév" required
+                    value="<?php if(isset($_POST['lastName'])) echo $_POST["lastName"];?>">
+
             </label>
             <br/>
             <div>E-mail</div>
@@ -69,7 +74,9 @@ $coolfood = New CoolFood();
 
             <div>Születési dátum</div>
             <label>
-                <input type="date" name="birthDate">
+                <input type="date" name="birthDate"
+                       value="<?php if(isset($_POST['birthDate'])) echo $_POST["birthDate"];}?>">
+
             </label>
             <br/>
             <label>

@@ -36,14 +36,14 @@ $coolfood = New CoolFood();
                 <label>
                     <i class="fa fa-envelope icon">
                     </i>
-                    <input class="belso" type="email" name="email" size="20" required placeholder="E-mail">
+                    <input class="belso" type="email" name="email"  required placeholder="E-mail">
                 </label>
             </div>
             <div class="jelszoicon">
                 <label>
                     <i class="fa fa-key icon">
                     </i>
-                    <input class="belso" type="password" name="password" size="20" required placeholder="Jelszó">
+                    <input class="belso" type="password" name="password"  required placeholder="Jelszó">
                 </label>
             </div>
 
