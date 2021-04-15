@@ -152,9 +152,19 @@ class CoolFood {
         $counter = 0;
         echo "<tr>";
         foreach ($cityData as $city) {
+            if( isset( $_SESSION["userId"] ) ){
 
-            $actualName = ($city["name"] == "Szeged" ? "<a href='restauratnt_list.php'>" .
-            $city["name"] . "- Kattints ide!</a>" : "" . $city["name"]);
+                $actualName = ($city["name"] == "Szeged" ? "<a href='restauratnt_list.php'>" .
+                    $city["name"] . "- Kattints ide!</a>" : "" . $city["name"]);
+
+            }
+            else{
+
+                $actualName = ($city["name"] == "Szeged" ? "<a href='login.php'>" .
+                    $city["name"] . "- Kattints ide!</a>" : "" . $city["name"]);
+
+            }
+
 
             $actualOpenDaytime = ($city["partOfDay"] == "DN" ? "☀️🌙" : "☀️");
 
@@ -259,41 +269,60 @@ class CoolFood {
         header("Location: login.php");
     }
 
-    public function register( $id, $firstName, $lastName, $password, $password2, $email, $phonenumber, $birthDate ) {
+    public function register( $id, $firstName, $lastName, $password , $password2, $age , $email, $phonenumber, $birthDate ) {
 
-        if(trim($firstName) === "" || trim($lastName) === "") {
+
+        if( $firstName == null || $lastName == null){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
-                  <b><u>Hiba: </u> Név megadása kötelező!</b></div>';
+                  <b><u>Hiba</u>: Név megadása kötelező!</b></div>';
+            exit();
+
         }
 
-        if(trim($password2) === "" || trim($password) === "") {
+        if( $password == null || ($password2) == null){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
-                  <b><u>Hiba: </u> Jelszó megadása kötelező!</b></div>';
+                  <b><u>Hiba</u>: Jelszó megadása kötelező!</b></div>';
+            exit();
+
         }
 
-        if(trim($email) === "" ) {
+        if( $age  == null){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
-                  <b><u>Hiba: </u> Email megadása kötelező!</b></div>';
+                  <b><u>Hiba</u>: Életkor  megadása kötelező!</b></div>';
+            exit();
+
+        }
+
+        if( $email == null ){
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba</u>: Email megadása kötelező!</b></div>';
+            exit();
+
         }
 
 
         if( strlen( $password ) <= 5 ){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
-                  <b><u>Hiba: </u> Túl rövid jelszó!</b></div>';
+                  <b><u>Hiba</u>: Túl rövid jelszó!</b></div>';
 
-            $_SESSION["failedToReg"] = 1;
+        }
+        if( (int)$age <= 17 ){
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba</u>: 18 éves kortól lehet regisztrálni!</b></div>';
+
         }
 
         elseif(!is_numeric($phonenumber)){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
-                  <b><u>Hiba: </u> Telefonszám csak számokból állhat!</b></div>';
+                  <b><u>Hiba</u>: Telefonszám csak számokból állhat!</b></div>';
 
-            $_SESSION["failedToReg"] = 1;
         }
         else{
 
@@ -304,31 +333,28 @@ class CoolFood {
             if( $password == $password2 ){
 
                 foreach ( $objectArray as $object ){
-
                     if( str_contains($object->getEmail(),$email) ){
 
                         echo '<div style="color: red;font-size:40px;text-align: center ">
-                              <b><u>Hiba: </u>Ez az email foglalt!</b></div>';
+                              <b><u>Hiba</u>: Ez az email foglalt!</b></div>';
+                        exit();
 
-                        $_SESSION["failedToReg"]=1;
-                        break;
                     }
-                    else{
 
-                        $userdata = new User( $id, $firstName, $lastName, $password, $email, $phonenumber, $birthDate );
-                        TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
-                        break;
-                    }
 
                 }
+                $userdata = new User( $id, $firstName, $lastName, $password, $email, $phonenumber, $birthDate );
+                TxtProcessor::writeobjectToFile("txt/user.txt",$userdata);
+                header("location: login.php");
+
+
 
             }
             else{
 
                 echo '<div style="color: red;font-size:40px;text-align: center ">
-                                <b><u>Hiba: </u> A jelszók nem egyeznek!</b></div>';
+                                <b><u>Hiba</u>: A jelszók nem egyeznek!</b></div>';
 
-                $_SESSION["failedToReg"]=1;
             }
         }
 

@@ -38,31 +38,32 @@ $coolfood = New CoolFood();
         </legend>
         <div class="belso">
             <div class="nev">Vezetéknév<span>Keresztnév</span></div>
-            <?php if(isset($_SESSION["failedToReg"])) {?>
             <label>
-                <input type="text" name="firstName" placeholder="Vezetéknév" required
-                       value="<?php if(isset($_POST['firstName'])) echo $_POST["firstName"];?>" >
+                <input type="text" name="firstName" placeholder="Vezetéknév">
 
             </label>
             <label>
-                <input type="text" name="lastName" placeholder="Keresztnév" required
-                    value="<?php if(isset($_POST['lastName'])) echo $_POST["lastName"];?>">
+                <input type="text" name="lastName" placeholder="Keresztnév">
 
             </label>
             <br/>
             <div>E-mail</div>
             <label>
-                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="email" name="email" placeholder="E-mail">
             </label>
             <div>Jelszó</div>
             <label>
-                <input type="password" name="password1" placeholder="Jelszó" required>
+                <input type="password" name="password1" placeholder="Jelszó">
             </label>
             <div>Jelszó újra</div>
             <label>
-                <input type="password" name="password2" placeholder="Jelszó" required>
+                <input type="password" name="password2" placeholder="Jelszó">
             </label>
             <br/>
+            <div>Életkor</div>
+            <label>
+                <input type="number" name="age" placeholder="Életkor">
+            </label>
             <div>Telefonszám</div>
             <label>
                 <input type="tel" name="phone" placeholder="Telefonszám">
@@ -74,8 +75,7 @@ $coolfood = New CoolFood();
 
             <div>Születési dátum</div>
             <label>
-                <input type="date" name="birthDate"
-                       value="<?php if(isset($_POST['birthDate'])) echo $_POST["birthDate"];}?>">
+                <input type="date" name="birthDate">
 
             </label>
             <br/>
@@ -101,7 +101,7 @@ $coolfood = New CoolFood();
             <?php
             if(isset($_POST["regist"])){
                  $coolfood->register(1, $_POST["firstName"],
-                        $_POST["lastName"], $_POST["password1"], $_POST["password2"],
+                        $_POST["lastName"], $_POST["password1"], $_POST["password2"],$_POST["age"],
                                  $_POST["email"], $_POST["phone"], $_POST["birthDate"]);
             }
 

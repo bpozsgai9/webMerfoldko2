@@ -1,4 +1,4 @@
-id;firstName;lastName;email;telephone;birthDate
+id;firstName;lastName;password;email;telephone;birthDate
 1;Gábor;Kovács;jelszo;kovacs.gabor@gmail.com;06301111111;1995-03-11
-2;András;Horváth;12345;andras.horvath@citromail.hu;06701111111;1981-05-26
-3;Peter;Parker;asd12;iamnotspiderman@marvel.com;+36121111111;1970-10-08
+2;András;Horváth;123456;andras.horvath@citromail.hu;06701111111;1981-05-26
+3;Peter;Parker;asd123;iamnotspiderman@marvel.com;+36121111111;1970-10-08
