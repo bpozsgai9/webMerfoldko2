@@ -34,7 +34,7 @@ class User {
         $this->password = $password;
         $this->email = $email;
         $this->telephone = $telephone;
-        $this->birthDate = $birthDate;
+        $this->birthDate = strtotime($birthDate);
     }
 
     public function __construct2($line) {
@@ -47,7 +47,7 @@ class User {
         $this->password = $arrivingData[3];
         $this->email = $arrivingData[4];
         $this->telephone = $arrivingData[5];
-        $this->birthDate = $arrivingData[6];
+        $this->birthDate = strtotime($arrivingData[6]);
     }
 
     public function __destruct() {
@@ -67,6 +67,6 @@ class User {
 
     public function getTelephone() { return $this->telephone; }
 
-    public function getBirthDate() { return $this->birthDate; }
+    public function getBirthDate() { return date("Y-m-d",$this->birthDate); }
 }
 ?>
