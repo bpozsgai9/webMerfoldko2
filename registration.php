@@ -39,30 +39,30 @@ $coolfood = New CoolFood();
         <div class="belso">
             <div class="nev">Vezetéknév<span>Keresztnév</span></div>
             <label>
-                <input type="text" name="firstName" placeholder="Vezetéknév">
+                <input type="text" name="firstName" placeholder="Vezetéknév" required>
 
             </label>
             <label>
-                <input type="text" name="lastName" placeholder="Keresztnév">
+                <input type="text" name="lastName" placeholder="Keresztnév" required>
 
             </label>
             <br/>
             <div>E-mail</div>
             <label>
-                <input type="email" name="email" placeholder="E-mail">
+                <input type="email" name="email" placeholder="E-mail" required>
             </label>
             <div>Jelszó</div>
             <label>
-                <input type="password" name="password1" placeholder="Jelszó">
+                <input type="password" name="password1" placeholder="Jelszó" required>
             </label>
             <div>Jelszó újra</div>
             <label>
-                <input type="password" name="password2" placeholder="Jelszó">
+                <input type="password" name="password2" placeholder="Jelszó" required>
             </label>
             <br/>
             <div>Életkor</div>
             <label>
-                <input type="number" name="age" placeholder="Életkor">
+                <input type="number" name="age" placeholder="Életkor" required>
             </label>
             <div>Telefonszám</div>
             <label>
