@@ -69,8 +69,6 @@ class TxtProcessor {
 
     public static function writeobjectToFile($fileName, $userObject) {
 
-        //Írjon bele plusz adatokat egy fájlba, regisztrációhoz
-        //kapjon egy objectet, (pl.: new User() típus)
         
         try {
             

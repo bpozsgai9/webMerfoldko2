@@ -238,36 +238,17 @@ class CoolFood {
             }
 
 
-        //akkor hívja meg a függvényt, ha a logIn submit gomb a frontenden értéket kap
-        //paraméterül kapja a bejelentekzési adatokat
-        //mégnézi hogy a listban talál-e ilyet
-        /*
-        $userTxtProcessor = new TxtProcessor("txt/user.txt", "user");
-        $objectArray = $userTxtProcessor->getObjectArray();
-        
-        foreach ($objectArray as $object) {
-            if (str_contains($object->getName(), $userName) && str_contains($object->getName(), $password)) {
-
-                //a session értéke legyen a felhasználó Id-ja
-                //$_SESSION["userId"] = $userId;
-                //ha a session értéke felhasználó Id-ja
-                //akkor navigáljon át egy másik oldalra -> header('Location: valami.php');
-                //és echo kijelentkező submit
-
-            }
-        }
-        */
     }
+
 
     public function logOut() {
 
-        //ha a kijelnkező submit értéket kap
-        //törölje a session értékét
-        //és ha a session értéke törölve van akkor ki kell hogy dobjon az oldlaról
         session_unset();
         session_destroy();
         header("Location: login.php");
+
     }
+
 
     public function register( $id, $firstName, $lastName, $password , $password2, $age , $email, $phonenumber, $birthDate ) {
 
@@ -358,10 +339,6 @@ class CoolFood {
             }
         }
 
-        //kapja paraméterül a form-ból érkező adatokat
-        //készítsen egy new User() típusú objectet
-        //hívja meg a TxtProcessor::writeobjectToFile() és a TxtProcessor::getActualHighestId() osztály függvényeit és készítsen új felhasználót
-        //az id növekedjen
 
     }
 
