@@ -253,6 +253,15 @@ class CoolFood {
     public function register( $id, $firstName, $lastName, $password , $password2, $age , $email, $phonenumber, $birthDate ) {
 
 
+        if( $firstName == null && $lastName == null && $password == null && $password2 == null && $age == null
+            && $email == null){
+
+            echo '<div style="color: red;font-size:40px;text-align: center ">
+                  <b><u>Hiba</u>: Mezők kitöltése kötelező!</b></div>';
+            exit();
+
+        }
+
         if( $firstName == null || $lastName == null){
 
             echo '<div style="color: red;font-size:40px;text-align: center ">
