@@ -200,7 +200,7 @@ class CoolFood {
 
             } else {
                     
-                echo "Hiba: A fájl nem kép!";
+                echo "Hiba: A fájl nem kép! ";
                 $uploadOk = 0;
             }
         
