@@ -15,12 +15,13 @@ $coolfood = New CoolFood();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header class="header">
 
-
-</header>
 <div>
-
+    <ul>
+        <li><a id="index" href="index.php"><b>Főoldal</b></a></li>
+        <li><a id="reg" href="registration.php"><b>Regisztráció</b></a></li>
+        <li class="notLink">Bejelentkezés</li>
+    </ul>
 </div>
 <div class="felulet">
 
@@ -58,6 +59,7 @@ $coolfood = New CoolFood();
                 }
                 ?>
             </div>
+
             <div class="register">
                 <a href="registration.php">
                     Kattints ide ha még nincsen fiókod.
@@ -68,7 +70,6 @@ $coolfood = New CoolFood();
                     Vissza a főoldalra.
                 </a>
             </div>
-
         </div>
     </form>
 </div>

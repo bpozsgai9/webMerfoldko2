@@ -70,15 +70,16 @@ a {
     padding-left: 50px;
     font-size: 30px;
 }
-
+.notLink{
+    font-size: 20px;
+    color: tomato;
+}
 ul {
     list-style: none;
     letter-spacing: 5px;
 }
 
-li {
-    display: inline;
-}
+
 
 #index:hover, #login:hover {
     color: #303030;

@@ -20,6 +20,7 @@ $coolfood = New CoolFood();
         <ul>
             <li><a id="index" href="index.php"><b>Főoldal</b></a></li>
             <li><a id="login" href="login.php"><b>Bejelentkezés</b></a></li>
+            <li class="notLink">Regisztráció</li>
         </ul>
     </div>
 
